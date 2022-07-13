@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Script</title>
+        <script type="text/javascript">
+            function IntAlert()
+            {
+                alert("This world is goona suck!!!");
+            }
+            function IntConfirm()
+            {
+                if(confirm("Am i right...?"))
+                {
+                    alert("ofcourse");
+                }
+                else
+                {
+                    alert("Maybe not");
+                } 
+            }
+            function IntPrompt()
+            {
+                var fname=prompt("Tell your shit:");
+                var lname=prompt("Tell your shit more:");
+                alert(fname+""+lname);
+            }
+            function bodyBG()
+            {
+                document.body.style.backgroundColor="black";
+            }
+            function divBG()
+            {
+                document.getElementById("D1").style.backgroundColor="blue";
+            }
+            function bodyBGdynamic()
+            {
+                document.body.style.backgroundColor=prompt("color name please!");
+            }
+            function divBGdynamic()
+            {
+                document.getElementById("D1").style.backgroundColor=prompt("color name please!");
+            }
+            function bodyBGCP1()
+            {
+                document.body.style.backgroundColor=document.getElementById("CP1").value;
+            }
+            function divBGCP2()
+            {
+                document.getElementById("D1").style.backgroundColor=document.getElementById("CP2").value;
+            }
+        </script>
+        <script src="demo.js"></script>
+        <body>
+            <div id="D1">Welcome</div><hr>
+            <input type="button" value="Alert Inline" onclick="alert('welcome to the world!')"/>
+            <input type="button" value="Confirm Inline" onclick="confirm('Are you sure?')"/>
+            <input type="button" value="Prompt Inline" onclick="prompt('Tell me:')"/>
+            <hr>
+            <input type="button" value="Alert Internal" onclick="IntAlert()"/>
+            <input type="button" value="Confirm Internal" onclick="IntConfirm()"/>
+            <input type="button" value="Prompt Internal" onclick="IntPrompt()"/>
+            <hr>
+            <input type="button" value="Alert External" onclick="ExtAlert()"/>
+            <input type="button" value="Confirm External" onclick="ExtConfirm()"/>
+            <input type="button" value="Prompt External" onclick="ExtPrompt()"/>
+            <hr>
+            <input type="button" value="Body BG" onclick="bodyBG()"/>
+            <input type="button" value="Div BG" onclick="divBG()"/>
+            <hr>
+            <input type="button" value="Body BG Dynamic" onclick="bodyBGdynamic()"/>
+            <input type="button" value="Div BG Dynamic" onclick="divBGdynamic()"/><hr>
+            <input type="color" id="CP1" onchange="bodyBGCP1()"/>
+            <input type="color" id="CP2" onchange="divBGCP2()"/>
+        </body>
+    </head>
+</html>
