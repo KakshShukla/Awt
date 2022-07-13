@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gridlayout4</title>
+    <style type="text/css">
+        *{font-weight: bold;font-size: 20px;}
+        #R1{background-color: grey;height: 50px;width: 100%;padding-top: 8px; text-align: center;margin-bottom: 10px;}
+        #R1C1{float: left;}
+        #R2{height: 575px;width: 100%;}
+        #R2R1, #R2R2, #R2R3, #R2R4{height: 120px;margin-bottom: 20px;width: 100%;}
+        #R2R1 div, #R2R2 div, #R2R3 div, #R2R4 div{background-color: gray;height: 120px;width: 23.5%;margin-right: 2%;float: left;}
+        #R2R1 div:last-child, #R2R2 div:last-child, #R2R3 div:last-child, #R2R4 div:last-child{margin-right: 0!important;width: 23.5%!important;}
+        #R3{height: 290px;width: 100%;}
+        #R3R1, #R3R2{height: 150px; margin-bottom: 10px;width: 32%;float:left;margin-right: 2%;background-color: grey;text-align: center;padding-top: 120px;}
+        #R3R3{height: 150px; margin-bottom: 10px;width: 32%;float:left;background-color: grey;text-align: center;padding-top: 120px;}
+        #R4{background-color: grey;height: 50px;width: 100%;padding-top: 8px; text-align: center;margin-bottom: 10px;}
+    </style>
+</head>
+<body>
+    <div id="R1">
+        <div id="R1C1">Logo</div>
+        <div id="R1C2">Navigation</div>
+    </div>
+    <div id="R2">
+        <div id="R2R1">
+            <div id="R2R1C1"></div>
+            <div id="R2R1C2"></div>
+            <div id="R2R1C3"></div>
+            <div id="R2R1C4"></div>
+        </div>
+        <div id="R2R2">
+            <div id="R2R2C1"></div>
+            <div id="R2R2C2"></div>
+            <div id="R2R2C3"></div>
+            <div id="R2R2C4"></div>
+        </div>
+        <div id="R2R3">
+            <div id="R2R3C1"></div>
+            <div id="R2R3C2"></div>
+            <div id="R2R3C3"></div>
+            <div id="R2R3C4"></div>
+        </div>
+        <div id="R2R4">
+            <div id="R2R4C1"></div>
+            <div id="R2R4C2"></div>
+            <div id="R2R4C3"></div>
+            <div id="R2R4C4"></div>
+        </div>
+    </div>
+    <div id="R3">
+        <div id="R3R1">Box 1</div>
+        <div id="R3R2">Box 2</div>
+        <div id="R3R3">Box 3</div>
+    </div>
+    <div id="R4">Footer</div>
+</body>
+</html>
