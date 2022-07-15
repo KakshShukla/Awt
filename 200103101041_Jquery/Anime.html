@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#b1").click(function(){
+                $("div").animate({left: '250px'});
+            });
+            $("#b2").click(function(){
+                $("div").animate({
+                    left: '250px',
+                    opacity: '0.5',
+                    height: '150px',
+                    width: '150px'
+                });
+            });
+            $("#b3").click(function(){
+                var div= $("div");
+                div.animate({height: '300px',opacity: '0.4'})
+                div.animate({width: '300px',opacity: '0.8'})
+                div.animate({height: '150px',opacity: '0.4'})
+                div.animate({width: '150px',opacity: '0.8'})
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id="b1">First one</button>
+    <button id="b2">Second one</button>
+    <button id="b3">Third one</button>
+    <div style="background: goldenrod;height: 250px;width: 250px;position: absolute;"></div> 
+</body>
+</html>

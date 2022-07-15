@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fades</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#f1").click(function(){
+                $("#d1").fadeIn();
+                $("#d2").fadeIn("slow");
+                $("#d3").fadeIn(3000);
+            });
+            $("#f2").click(function(){
+                $("#d1").fadeOut();
+                $("#d2").fadeOut("slow");
+                $("#d3").fadeOut(3000);
+            });
+            $("#f3").click(function(){
+                $("#d1").fadeToggle();
+                $("#d2").fadeToggle("slow");
+                $("#d3").fadeToggle(3000);
+            });
+            $("#f4").click(function(){
+                $("#d1").fadeTo("slow",0.15);
+                $("#d2").fadeTo("slow",0.4);
+                $("#d3").fadeTo("slow",0.7);
+            });
+        })
+
+    </script>
+</head>
+<body>
+    <button id="f1">Fade in</button><hr>
+    <button id="f2">Fade out</button><hr>
+    <button id="f3">Fade in or out</button><hr>
+    <button id="f4">Fade to</button><hr>
+
+    <div id="d1" style="width: 100px;height: 100px;background-color:midnightblue ;display: none;"></div>
+    <div id="d2" style="width: 100px;height: 100px;background-color:palevioletred ;display: none;"></div>
+    <div id="d3" style="width: 100px;height: 100px;background-color:black ;display: none;"></div>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validate</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+
+            //Reg Ex Declaration - Globaly.
+			var $FNameLNameRegEx = /^([a-zA-Z]{2,20})$/;
+			var $FullNameRegEx = /^([a-zA-Z ]{2,40})$/;
+            var $EmailIdRegEx = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,8}\b$/i;
+			var $ConNoRegEx = /^([0-9]{10})$/;
+
+            $(document).ready(function(){
+
+                $("#Name").blur(function(){
+                    $("#Namevalidate").empty();
+                    if($(this).val()=="" || $(this).val()==null){
+                        $("#Namevalidate").html("(*) Name required!!!");
+                    }
+                    else{
+                        if(!$(this).val().match($FullNameRegEx)){
+                            $("#Namevalidate").html("(*) Invalid name!!!");
+                        }
+                    }
+                });
+                $("#Name").keypress(function(k){
+                    $("#Namevalidate").empty();
+                    var Flag=((k.which>=65 && k.which<=90 || k.which>=95 && k.which<=120));
+                    if (Flag==false){
+                        $("#Namevalidate").html("Invalid Input!")
+                    }
+                    return Flag;
+                });
+                $("#Contactno").blur(function(){
+                    $("#contactvalidate").empty();
+                    if($(this).val()=="" || $(this).val()==null){
+                        $("#contactvalidate").html("(*) Contactno. required!!!");
+                    }
+                    else{
+                        if(!$(this).val().match($ConNoRegEx)){
+                            $("#contactvalidate").html("(*) Invalid contact!!!");
+                        }
+                    }
+                });
+                $("#Contactno").keypress(function(k){
+                    $("#contactvalidate").empty();
+                    var Flag=((k.which>=48 && k.which<=57));
+                    if (Flag==false){
+                        $("#contactvalidate").html("Invalid Input!")
+                    }
+                    return Flag;
+                });
+                $("#EmailId").blur(function(){
+                    $("#emailvalidate").empty();
+                    if($(this).val()=="" || $(this).val()==null){
+                        $("#emailvalidate").html("(*)Email is required!!!");
+                    }
+                    else{
+                        if(!$(this).val().match($EmailIdRegEx)){
+                            $("#emailvalidate").html("(*) Invalid email id..!!");
+                        }
+                    }
+                });
+                $("#Contactmsg").blur(function(){
+                    $("#messagevalidate").empty();
+                    if($(this).val()=="" || $(this).val()==null){
+                        $("#messagevalidate").html("(*)Message is required!!!");
+                    }
+                    else{
+                        if($(this).val().length>300){
+                            $("#messagevalidate").html("(*) Invalid message..!!");
+                        }
+                    }
+                });
+                var Nameflag=false, Contactnoflag=false, EmailIdflag=false, Contactmsgflag=false;
+
+                $("#Btnsubmit").click(function(){
+                    $("#Namevalidate").empty();
+                    if($("#Name").val()=="" || $("#Name").val()==null){
+                        $("#Namevalidate").html("(*)Name required!!!")
+                        Nameflag=false;
+                    }
+                    else{
+                        if(!$("#Name").val().match($FullNameRegEx)){
+                            $("#Namevalidate").html("(*)Invalid name!!!")
+                            Nameflag=false;
+                        }
+                        else{
+                            Nameflag=true;
+                        }
+                    }
+                    $("#contactvalidate").empty();
+                    if($("#Contactno").val()=="" || $("#Contactno").val()==null){
+                        $("#contactvalidate").html("(*)Contact no. required!!!")
+                        Conatctnoflag=false;
+                    }
+                    else{
+                        if(!$("#Contactno").val().match($ConNoRegEx)){
+                            $("#contactvalidate").html("(*)Invalid contact no.!!!")
+                            Contactnoflag=false;
+                        }
+                        else{
+                            Contactnoflag=true;
+                        }
+                    }
+                    $("#emailvalidate").empty();
+                    if($("#EmailId").val()=="" || $("#EmailId").val()==null){
+                        $("#emailvalidate").html("(*)EmailId required!!!")
+                        EmailIdflag=false;
+                    }
+                    else{
+                        if(!$("#EmailId").val().match($EmailIdRegEx)){
+                            $("#emailvalidate").html("(*)Invalid EmailId!!!")
+                            EmailIdflag=false;
+                        }
+                        else{
+                            EmailIdflag=true;
+                        }
+                    }
+                    $("#messagevalidate").empty();
+                    if($("#Contactmsg").val()=="" || $("#Contactmsg").val()==null){
+                        $("#messagevalidate").html("(*)Message required!!!")
+                        Contactmsgflag=false;
+                    }
+                    else{
+                        if($("#Contactmsg").val().length>300){
+                            $("#messagevalidate").html("(*)Invalid Message!!!")
+                            Contactmsgflag=false;
+                        }
+                        else{
+                            Contactmsgflag=true;
+                        }
+                    }
+                    if(Nameflag==true && Contactnoflag==true && EmailIdflag==true && Contactmsgflag==true){
+						$("input,textarea").val("");
+						alert("Form submitted successfully..!!");
+					}
+					else{
+						alert("Invalid Input..!!");
+					}
+                });
+            });
+        </script>
+</head>
+<body>
+    <input type="text" id="Name" autofocus placeholder="Enter the name..." maxlength="40">
+    <small id="Namevalidate"></small><hr>
+    <input type="text" id="Contactno" placeholder="Enter the contact no..." maxlength="10">
+    <small id="contactvalidate"></small><hr>
+    <input type="text" id="EmailId" placeholder="Enter the email id..." maxlength="50">
+    <small id="emailvalidate"></small><hr>
+    <textarea rows="5" id="Contactmsg" placeholder="Enter the message..." maxlength="400"></textarea>
+    <small id="messagevalidate"></small><hr>
+    <button id="Btnsubmit">Submit</button>
+</body>
+</html>

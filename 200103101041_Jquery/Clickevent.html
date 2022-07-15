@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickbutton</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#Show").attr("disabled",true);
+
+            $("#Hide").click(function(){
+                if (confirm("Are you sure????!"))
+                {
+                    $("#div1").hide(3000);
+                    $(this).attr("disabled",true);
+                    $("#Show").attr("disabled",false);
+                    $("#Toggle").text("Show");
+                }
+            });
+            $("#Show").click(function(){
+                if (confirm("Are you sure????!"))
+                {
+                    $("#div1").show(3000);
+                    $(this).attr("disabled",true);
+                    $("#Hide").attr("disabled", false);
+                    $("#Toggle").text("Hide")
+                }
+            });
+            $("#Toggle").click(function(){
+                if (confirm("Are you sure????!"))
+                {
+                    $("#div1").toggle(3000);
+
+                    if ($(this).text()=="Hide"){
+
+                        $(this).text("Show");
+                        $("#Hide").attr("disabled",true);
+                        $("#Show").attr("disabled",false);
+                    }else{
+                        $(this).text("Hide");
+                        $("#Hide").attr("disabled",false);
+                        $("#Show").attr("disabled",true);}
+                }
+            });
+            $("#Plus").click(function(){
+                var MDH=parseInt($("#div1").css("height"));
+                if(MDH<=500)
+                {
+                    MDH+=10;
+                    $("#div1").css("height",MDH);
+                    $("#div1").css("width",MDH);
+                }
+                else
+                {
+                    alert("Not more than 500px!!!");
+                }
+            });
+            $("#Minus").click(function(){
+                var MDH=parseInt($("#div1").css("height"));
+                if(MDH>=20)
+                {
+                    MDH-=10;
+                    $("#div1").css("height",MDH);
+                    $("#div1").css("width",MDH);
+                }
+                else
+                {
+                    alert("Less than 20px!!!");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="div1" style="height:300px;width:300px;background-color: tomato;"></div>
+    <button id="Hide">Hide</button>&nbsp;&nbsp;<button id="Show">Show</button><hr>
+    <button id="Toggle">Hide</button><hr>
+    <button id="Plus" style="font-size:xx-large;"><b>+</b></button>&nbsp;&nbsp;<button id="Minus" style="font-size:xx-large;"><b>-</b></button><hr>
+</body>
+</html>
