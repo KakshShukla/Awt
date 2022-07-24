@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Droppable</title>
+
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet" />
+    <script src = "https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js" type="text/javascript"></script>
+      
+    <script>
+        $(document).ready(function(){
+            $("#d1").draggable();
+            $("#d2").droppable({
+                accept:"#d1",
+                drop:function(event,ui){
+                    $(this).addClass("MyCls").find("p").html("And the change is done...")
+                }
+            })
+        })
+    </script>
+    <style>
+        .ui-widget-header
+        {
+            background: gold;
+            font-weight: bold;
+            border: 2px solid black;
+            color: black;
+        }
+        .ui-widget-content
+        {
+            background: blueviolet;
+            font-weight: bold;
+            border: 2px solid black;
+            color: black;
+        }
+        .MyCls{background-color: aqua;color: black;}
+        #d1
+        {
+            width: 150px;
+            height: 150px;
+            padding: 20px;
+            margin: 0px 5px 10px 0;
+            text-align: center;
+        }
+        #d2
+        {
+            width: 250px;
+            height: 250px;
+            padding: 20px;
+            margin: 0px 5px 10px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1" class="ui-widget-content">
+        <p>This is gonna change...</p>
+    </div><hr>
+    <div id="d2" class="ui-widget-header">
+        <p>See the change...</p>
+    </div><hr>
+</body>
+</html>

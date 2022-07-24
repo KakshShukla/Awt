@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residable</title>
+
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet" type="text/css">
+    <script src = "https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js" type="text/javascript"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $("#d1").resizable()
+        })
+    </script>
+    <style>
+        #d1
+        {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            padding: 10px;
+        }
+        .ui-widget-content
+        {
+            background: royalblue;
+            border: 2px solid black;
+            color: black;
+        }
+        .ui-widget-header
+        {
+            background: yellow;
+            border: 2px solid black;
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1" class="ui-widget-content">
+        <h3 class="ui-widget-header">Zoom IN or Zoom OUT...</h3>
+    </div>
+</body>
+</html>

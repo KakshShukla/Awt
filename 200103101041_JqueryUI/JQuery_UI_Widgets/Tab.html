@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab</title>
+
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet" type="text/css" />
+    <script src = "https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js" type="text/javascript"></script>
+	
+    <script>
+        $(document).ready(function(){
+            $("#tabular").tabs();
+        })
+    </script>
+
+    <style>
+        #tabular{font-size: 15px;}
+        #tabular div,#tabular p{background: whitesmoke;}
+        .ui-widget-header{
+            background: blue ;
+            border: 1px solid;
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="tabular">
+        <ul>
+            <li><a href="#tab1">The first one...</a></li>
+            <li><a href="#tab2">The second one...</a></li>
+            <li><a href="#tab3">The third one...</a></li>
+        </ul>
+        <div id="tab1">
+            <p>AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT</p>
+        </div>
+        <div id="tab2">
+            <p>AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT Web Web Web Web Web Web Web Web Web Web Web Web Web Web</p>
+        </div>
+        <div id="tab3">
+            <p>AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT AWT Web Web Web Web Web Web Web Web Web Web Web Web Web Web Web Web Web Web Web Web Web Web Web Web</p>
+        </div>
+    </div>
+</body>
+</html>
